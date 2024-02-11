@@ -42,3 +42,4 @@ pdf_path = "path to your pdf file"
 
 ## Usage:
 Run the program
+python3 gpt_summarizer.py
