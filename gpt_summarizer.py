@@ -13,9 +13,13 @@ except LookupError:
     print("Downloading NLTK 'punkt' tokenizer models...")
     nltk.download('punkt')
 
+
+# define parameters and file path
+pdf_path = "/Users/seeker/Desktop/Axé Engineering/sample documents/APPLE_US_TERMS_COND-0056.pdf"
+section_tokens = 3000
+overlap_size = 150
+
 # Function to extract text from PDF
-
-
 def extract_text_from_pdf(pdf_path):
     try:
         with open(pdf_path, 'rb') as pdf_file_obj:
@@ -52,7 +56,7 @@ def gpt_summarize(text):
 # Function to recursively summarize text
 
 
-def recursively_summarize(text, section_size=3000, overlap=150):
+def recursively_summarize(text, section_size=section_tokens, overlap=overlap_size):
     detokenizer = MosesDetokenizer()
     tokens = nltk.word_tokenize(text)
     summaries = []
